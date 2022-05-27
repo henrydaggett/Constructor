@@ -1,4 +1,5 @@
-import { primaryPalette } from "./primary-palette";
+import { primaryPalette } from "./colorPalette.js";
+
 
 export const buttonJSON = {
   "componentName": "Buttons",

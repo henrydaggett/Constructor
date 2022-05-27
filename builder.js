@@ -1,9 +1,5 @@
 // create an index.js file where you import everything then just have one import here
-import { alertJSON } from './alerts-and-notifications.js'
-import { badgeJSON } from './badges.js'
-import { breadcrumbJSON } from './breadcrumbs.js'
 import { buttonJSON } from './buttons.js'
-import { notificationJSON } from './alerts-and-notifications.js'
 
 // eventually this will depend on the component selected, for now only buttonJSON
 const componentJSON = buttonJSON
