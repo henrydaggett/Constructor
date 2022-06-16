@@ -1,20 +1,21 @@
 import { primaryPalette } from "./colorPalette.js";
 
-
 export const buttonJSON = {
   "componentName": "Buttons",
-  "defaultHTML": "<button class='btn ${purpose} ${size} ${icon}' ${disabled}>${content}</button>",
+  "defaultTemplate": "<button class='btn ${purpose} ${size} ${icon} ${block}' ${disabled}>${content}</button>",
   "selectors": {
     "purpose": "",
     "color": "",
     "size": "",
     "icon": "",
+    "block": "",
     "disabled": "",
     "content": "Label"
   },
   "controls": [{
     "name": "Icon",
-    "type": "feature",
+    "category": "feature",
+    "inputType": "select",
     "properties": [
       {
         "label": "None",
@@ -28,7 +29,7 @@ export const buttonJSON = {
         "label": "Icon-text",
         "selectorValues": {
           "icon": "btn-icon-text",
-          "content": "<i class='icon'>info</i> Label"
+          "content": "<i class='icon'>info_outline</i> Label"
         }
       },
       {
@@ -48,8 +49,21 @@ export const buttonJSON = {
     ]
   },
   {
+    "name": "Block button",
+    "category": "feature",
+    "inputType": "switch",
+    "properties": [
+      {
+        "selectorValues": {
+          "block": "btn-block"
+        }
+      }
+    ]
+  },
+  {
     "name": "Purpose",
-    "type": "style",
+    "category": "style",
+    "inputType": "select",
     "properties": [
       {
         "label": "Primary",
@@ -92,12 +106,14 @@ export const buttonJSON = {
   },
   {
     "name": "Color",
-    "type": "style",
-    "properties": { ...primaryPalette }
+    "category": "style",
+    "inputType": "select",
+    "properties": [...primaryPalette]
   },
   {
     "name": "Size",
-    "type": "style",
+    "category": "style",
+    "inputType": "select",
     "properties": [
       {
         "label": "SM",
@@ -128,7 +144,8 @@ export const buttonJSON = {
   },
   {
     "name": "Disabled",
-    "type": "state",
+    "category": "state",
+    "inputType": "switch",
     "properties": [
       {
         "selectorValues": {

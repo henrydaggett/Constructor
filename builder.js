@@ -1,4 +1,8 @@
 // create an index.js file where you import everything then just have one import here
+// import { alertJSON } from './components/alerts-and-notifications.js'
+// import { badgeJSON } from './components/badges.js'
+// import { breadcrumbJSON } from './components/breadcrumbs.js'
+// import { notificationJSON } from './components/alerts-and-notifications.js'
 import { buttonJSON } from './buttons.js'
 
 // eventually this will depend on the component selected, for now only buttonJSON
@@ -7,6 +11,9 @@ const componentJSON = buttonJSON
 const features = componentJSON.controls.filter(object => object.category === 'feature')
 const styles = componentJSON.controls.filter(object => object.category === 'style')
 const states = componentJSON.controls.filter(object => object.category === 'state')
+
+let componentNameHTML = document.getElementById('componentName')
+componentNameHTML.innerText = componentJSON.componentName
 
 
 const buildPropertyControls = (controls) => {
