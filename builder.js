@@ -12,6 +12,10 @@ const features = componentJSON.controls.filter(object => object.category === 'fe
 const styles = componentJSON.controls.filter(object => object.category === 'style')
 const states = componentJSON.controls.filter(object => object.category === 'state')
 
+console.log('features', features)
+console.log('styles', styles)
+console.log('states', states)
+
 let componentNameHTML = document.getElementById('componentName')
 componentNameHTML.innerText = componentJSON.componentName
 
@@ -91,6 +95,7 @@ window.getControlValues = function () {
     }
   })
 
+  console.log('all controls', controlsObject)
 
   //not sure how this works but this reduce function formats the JSON correctly from the last function
   const selectorsFromControls = controlsObject.reduce((obj, json) => {
@@ -98,6 +103,7 @@ window.getControlValues = function () {
     return obj;
   }, {});
 
+  console.log('selectors from controls', selectorsFromControls)
 
   const selectorsOrigin = Object.assign(defaultSelectors, selectorsFromControls)
   const selectors = { ...selectorsOrigin }
@@ -123,3 +129,18 @@ window.getControlValues = function () {
 }
 
 getControlValues()
+
+
+
+// Get all available variant options for a specific selector
+function allSelectorOptions(componentObject, selectorName) {
+  return Object.entries(componentObject)
+    .reduce((acc, [key, value]) => (key === selectorName)
+      ? acc.concat(value)
+      : (typeof value === 'object')
+        ? acc.concat(allSelectorOptions(value, selectorName))
+        : acc
+      , [])
+}
+
+console.log(allSelectorOptions(componentJSON, 'purpose'))
