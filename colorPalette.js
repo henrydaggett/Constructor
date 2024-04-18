@@ -1,51 +1,27 @@
 export const primaryPalette = [
   {
-    "label": "Primary",
-    "default": true,
-    "selectorValues": {
-      "color": "primary"
-    }
+    label: "Primary",
+    default: true,
+    selectorValues: {
+      color: "primary",
+    },
   },
   {
-    "label": "Secondary",
-    "selectorValues": {
-      "color": "secondary"
-    }
+    label: "Blue",
+    selectorValues: {
+      color: "blue",
+    },
   },
   {
-    "label": "Light",
-    "selectorValues": {
-      "color": "light"
-    }
+    label: "Green",
+    selectorValues: {
+      color: "green",
+    },
   },
   {
-    "label": "Dark",
-    "selectorValues": {
-      "color": "dark"
-    }
+    label: "Red",
+    selectorValues: {
+      color: "red",
+    },
   },
-  {
-    "label": "Info",
-    "selectorValues": {
-      "color": "info"
-    }
-  },
-  {
-    "label": "Success",
-    "selectorValues": {
-      "color": "success"
-    }
-  },
-  {
-    "label": "Warning",
-    "selectorValues": {
-      "color": "warning"
-    }
-  },
-  {
-    "label": "Danger",
-    "selectorValues": {
-      "color": "danger"
-    }
-  }
-]
+];
