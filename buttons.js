@@ -30,39 +30,27 @@ export const buttonJSON = {
           label: "Icon-text",
           selectorValues: {
             icon: "btn-icon-text",
-            content: "<i class='icon'>info_outline</i> Label",
+            content: "<i class='icon'>icon</i> Label",
           },
         },
         {
           label: "Text-icon",
           selectorValues: {
             icon: "btn-text-icon",
-            content: "Label <i class='icon'>info_outline</i>",
+            content: "Label <i class='icon'>icon</i>",
           },
         },
         {
           label: "Icon only",
           selectorValues: {
             icon: "",
-            content: "<i class='icon'>info_outline</i>",
+            content: "<i class='icon'>icon</i>",
           },
         },
       ],
     },
     {
-      name: "Block button",
-      category: "feature",
-      inputType: "switch",
-      properties: [
-        {
-          selectorValues: {
-            block: "btn-block",
-          },
-        },
-      ],
-    },
-    {
-      name: "Purpose",
+      name: "Level",
       category: "style",
       inputType: "select",
       properties: [
@@ -70,37 +58,19 @@ export const buttonJSON = {
           label: "Primary",
           default: true,
           selectorValues: {
-            purpose: "btn-${color}",
+            purpose: "btn-primary-${color}",
           },
         },
         {
-          label: "Outline",
+          label: "Secondary",
           selectorValues: {
-            purpose: "btn-outline-${color}",
-          },
-        },
-        {
-          label: "Default",
-          selectorValues: {
-            purpose: "btn-default",
+            purpose: "btn-secondary-${color}",
           },
         },
         {
           label: "Discreet",
           selectorValues: {
-            purpose: "btn-discreet-${color}",
-          },
-        },
-        {
-          label: "Flat",
-          selectorValues: {
-            purpose: "btn-flat-${color}",
-          },
-        },
-        {
-          label: "Link",
-          selectorValues: {
-            purpose: "btn-link",
+            purpose: "btn-discreet",
           },
         },
       ],
@@ -133,12 +103,6 @@ export const buttonJSON = {
           label: "LG",
           selectorValues: {
             size: "btn-lg",
-          },
-        },
-        {
-          label: "XL",
-          selectorValues: {
-            size: "btn-xl",
           },
         },
       ],

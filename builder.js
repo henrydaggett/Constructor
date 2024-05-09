@@ -32,12 +32,10 @@ const buildPropertyControls = (controls) => {
         const controlName = control.name;
         const selectors = JSON.stringify(control.properties[0].selectorValues);
 
-        const switchHTML = `<div class="flex-between" style="height: 40px">
-            <p class="text-secondary font-weight-medium mb-0 ml-2">${controlName}</p>
-            <div class="custom-control custom-switch">
-              <input type="checkbox" class="custom-control-input" id="property-${controlName}" data-selector-values="${encodeURI(selectors)}" onchange="getControlValues()">
-              <label class="custom-control-label" for="property-${controlName}"></label>
-            </div>
+        const switchHTML = `<div>
+            <p>${controlName}</p>
+              <input type="checkbox" id="property-${controlName}" data-selector-values="${encodeURI(selectors)}" onchange="getControlValues()">
+              <label for="property-${controlName}"></label>
           </div>`;
 
         return switchHTML;
@@ -50,17 +48,13 @@ const buildPropertyControls = (controls) => {
           })
           .join("");
 
-        const selectInput = `<select class="form-control text-right" style="background-color: unset"  id="property-${controlName}" onchange="getControlValues()">
+        const selectInput = `<select id="property-${controlName}" onchange="getControlValues()">
             ${selectOptions}
         </select>`;
 
-        const selectHTML = `<article class="flex-between" style="height: 40px">
-            <div class="input-group">
-              <div class="input-group-prepend input-group-merged">
-                <span class="text-secondary font-weight-medium">${controlName}</span>
-              </div>
+        const selectHTML = `<article>
+                <p>${controlName}</p>
               ${selectInput}
-            </div>
           </article>`;
 
         return selectHTML;
